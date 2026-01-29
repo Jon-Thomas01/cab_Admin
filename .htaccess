@@ -1,0 +1,106 @@
+Options +FollowSymLinks
+
+RewriteEngine on
+RewriteRule ^chat - [L] 
+
+#<IfModule mod_rewrite.c>
+#RewriteEngine On
+#RewriteCond %{HTTP_HOST} !^www\.
+#RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+#</IfModule>
+
+################ header###############
+
+#all dashboard pages
+RewriteRule ^(dashboard)/(airport)$ content.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(dashboard)/(all_jobs)$ content.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(dashboard)/(future_jobs)$ content.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(dashboard)/(future_handbackjobs)$ content.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(dashboard)/(completed_job)$ content.php?parm=$1&page_name=$2 [L] 
+RewriteRule ^(dashboard)/(lost_jobs)$ content.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(dashboard)/(make_booking)$ content.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(dashboard)/(next4hr)$ content.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(dashboard)/(search_booking)$ content.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(dashboard2)/(dashboard)$ content2.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(dashboard2)/(draw_list)$ content2.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(dashboard2)/(map_plot)$ content2.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(dashboard2)/(booking)$ content2.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(dashboard2)/(edit_booking)$ content2.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(dashboard)/(testme)$ content.php?parm=$1&page_name=$2 [L]
+
+RewriteRule ^(dashboard)/(lost_jobs)/([0-9]+)$ content.php?parm=$1&page_name=$2&page=$3 [L]
+RewriteRule ^(dashboard)/(airport)/([0-9]+)$ content.php?parm=$1&page_name=$2&page=$3 [L]
+RewriteRule ^(dashboard)/(all_jobs)/([0-9]+)$ content.php?parm=$1&page_name=$2&page=$3 [L]
+
+RewriteRule ^(dashboard2)/(dashboard)/([0-9]+)$ content2.php?parm=$1&page_name=$2&page=$3 [L]
+RewriteRule ^(dashboard2)/(draw_list)/([0-9]+)$ content2.php?parm=$1&page_name=$2&page=$3 [L]
+RewriteRule ^(dashboard2)/(map_plot)/([0-9]+)$ content2.php?parm=$1&page_name=$2&page=$3 [L]
+
+RewriteRule ^(dashboard2)/(booking)/([0-9]+)$ content2.php?parm=$1&page_name=$2&page=$3 [L]
+RewriteRule ^(dashboard2)/(edit_booking)/([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])$ content2.php?parm=$1&page_name=$2&id=$3 [L]
+RewriteRule ^(dashboard)/(future_jobs)/([0-9]+)$ content.php?parm=$1&page_name=$2&page=$3 [L]
+RewriteRule ^(dashboard)/(future_handbackjobs)/([0-9]+)$ content.php?parm=$1&page_name=$2&page=$3 [L]
+RewriteRule ^(dashboard)/(completed_job)/([0-9]+)$ content.php?parm=$1&page_name=$2&page=$3 [L]
+
+
+RewriteRule ^(dashboard)/(future_jobs)/([0-9]+)/([0-9]+)$ content.php?parm=$1&page_name=$2&page=$3&status=$4 [L]
+
+RewriteRule ^(dashboard)/(lost_jobs)/([0-9]+)$ content.php?parm=$1&page_name=$2&page=$3 [L]
+
+RewriteRule ^(dashboard)/(next4hr)/([0-9]+)$ content.php?parm=$1&page_name=$2&page=$3 [L]
+
+RewriteRule ^(dashboard)/(demand_map)$ content.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(dashboard)/(drivers_location)$ content.php?parm=$1&page_name=$2 [L]
+
+RewriteRule ^(dashboard)/(canceled_jobs)$ content.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(dashboard)/(canceled_jobs)/([0-9]+)$ content.php?parm=$1&page_name=$2&page=$3 [L]
+
+RewriteRule ^(dashboard)/(handback)$ content.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(dashboard)/(handback)/([0-9]+)$ content.php?parm=$1&page_name=$2&page=$3 [L]
+
+RewriteRule ^(dashboard)/(reports)$ content.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(dashboard)/(reports)/([0-9]+)$ content.php?parm=$1&page_name=$2&page=$3 [L]
+RewriteRule ^(dashboard)/(lost_job_report)$ content.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(dashboard)/(driver_report)$ content.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(dashboard)/(driver_report)/(bid)/([0-9]+)$ content.php?parm=$1&page_name=$2&bid=$3&driver=$4 [L]
+
+
+#all settings page
+RewriteRule ^(settings)/(edit_profile)/([0-9]+)$ content.php?parm=$1&page_name=$2&id=$3 [L]
+
+#RewriteRule ^(settings)/(edit_profile)/([0-9][0-9])$ content.php?parm=$1&page_name=$2&id=$3 [L]
+
+RewriteRule ^(settings)/(pricing)$ content.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(settings)/(postcode)$ content.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(settings)/(postcode)/([0-9]+)$ content.php?parm=$1&page_name=$2&page=$3 [L]
+RewriteRule ^(settings)/(othersurcharge)$ content.php?parm=$1&page_name=$2 [L]
+
+RewriteRule ^(settings)/(fleet)$ content.php?parm=$1&page_name=$2 [L]
+
+RewriteRule ^(settings)/(fleet)/([0-9]+)$ content.php?parm=$1&page_name=$2&page=$3 [L]
+RewriteRule ^(settings)/(fleet)/edit/([0-9]+)$ content.php?parm=$1&page_name=$2&id=$3 [L]
+
+
+RewriteRule ^(settings)/(texibase)$ content.php?parm=$1&page_name=$2 [L]
+
+RewriteRule ^(settings)/(texibase)/([0-9]+)$ content.php?parm=$1&page_name=$2&page=$3 [L]
+RewriteRule ^(settings)/(texibase)/edit/([0-9]+)$ content.php?parm=$1&page_name=$2&id=$3 [L]
+
+
+
+
+RewriteRule ^(settings)/(freez)$ content.php?parm=$1&page_name=$2 [L]
+RewriteRule ^(settings)/(freez)/([0-9]+)$ content.php?parm=$1&page_name=$2&page=$3 [L]
+
+RewriteRule ^(settings)/(incdec)$ content.php?parm=$1&page_name=$2 [L]
+
+RewriteRule ^(settings)/(incdec)/([0-9]+)$ content.php?parm=$1&page_name=$2&page=$3 [L]
+
+RewriteRule ^(settings)/(othercoverage)$ content.php?parm=$1&page_name=$2 [L]
+
+RewriteRule ^(settings)/(asap)$ content.php?parm=$1&page_name=$2 [L]
+
+RewriteRule ^(settings)/(asap)/([0-9]+)$ content.php?parm=$1&page_name=$2&page=$3 [L]
+
+
+#RewriteRule ^(settings)/(test)/([0-9]+)$ test.php?parm=$1&page_name=$2&page=$3 [L]
